@@ -50,10 +50,11 @@ export function Counter() {
     <Box
       css={{
         margin: '$200 0',
-        maxWidth: '$1500',
         display: 'flex',
+        width: '100%',
         flexDirection: 'column',
         alignItems: 'center',
+        justifyContent: 'center',
       }
     }>
       <Text size="5xl" css={{ fontWeight: 700, marginBottom: '$200' }}>
@@ -84,9 +85,11 @@ export function Counter() {
         </StyledButton>
       </Box>
       {error && (
-        <Text size="sm" color="negative" css={{ wordWrap: 'break-word' }}>
-          {error}
-        </Text>
+        <Box css={{ maxWidth: '$1500' }}>
+          <Text size="sm" color="negative" css={{ wordWrap: 'break-word' }}>
+            {error}
+          </Text>
+        </Box>
       )}
     </Box>
   );
