@@ -16,19 +16,31 @@ export default function Home() {
         </Heading>
       </header>
       <Main>
-        <Box css={{ display: 'flex', justifyContent: 'center', margin: '$100' }}>
+        <Box css={{ display: 'flex', justifyContent: 'center', margin: '$200' }}>
           <Dice />
         </Box>
         <Box
           as="main"
           css={{
             display: 'flex',
+            flexDirection: 'row',
             justifyContent: 'space-between',
             margin: '$100',
+
+            when: {
+              downSm: {
+                flexDirection: 'column',
+              },
+            },
           }}
         >
           {[...Array(TOTAL_PLAYERS)].map((_, index) => (
-            <Box key={index} css={{ textAlign: 'center' }}>
+            <Box
+              key={index}
+              css={{
+                textAlign: 'center',
+              }}
+            >
               <Heading as="h2" size="2xl">
                 Player {index + 1}
               </Heading>
