@@ -28,7 +28,7 @@ export default function Home() {
           }}
         >
           {[...Array(TOTAL_PLAYERS)].map((_, index) => (
-            <Box key={index}>
+            <Box key={index} css={{ textAlign: 'center' }}>
               <Heading as="h2" size="2xl">
                 Player {index + 1}
               </Heading>
