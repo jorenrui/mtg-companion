@@ -1195,22 +1195,17 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
-"@stitches/core@0.1.0-canary.20":
-  version "0.1.0-canary.20"
-  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-0.1.0-canary.20.tgz#59974393d5e887adda94dc82ca7bb6574bc59cbc"
-  integrity sha512-aWeUlFzCGl1hOa6hb3+OLuA4Z06wTjBjlp9yYHIA9JfN3E/BbjAYJ8i8dtD72t8N/QZcf7vAKpdMw8CrYffEIw==
-
-"@stitches/core@^0.1.0-canary.20":
+"@stitches/core@0.1.4", "@stitches/core@^0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@stitches/core/-/core-0.1.4.tgz#1b33c3ef55c044f006049d8310b784720d669798"
   integrity sha512-jFZMpw6uD7BRvkPp3n0JsUlLO6d7oRwBgInEHDB1xlsRLqB4yaepyEyJ1CqMx8HidyW5QeLXH6IYPzERxCUM/Q==
 
-"@stitches/react@0.1.0-canary.20":
-  version "0.1.0-canary.20"
-  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.1.0-canary.20.tgz#e946a4d8cc6dc6e3ed146d15eda4ba1657578fb8"
-  integrity sha512-0TzcRBZYUYQgU1Tc9P3eA6nmviSlNIVZ5cu/HpTkp8ETAczebiCngTyabpiM3SvkIsaHjyJuEwTkBJbndF+sPQ==
+"@stitches/react@0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.1.4.tgz#f1a37911683cfc192906b0710c9685bddb316abc"
+  integrity sha512-/YI/cuyd8tCGaq5ewDF2goGVa/LuIQZbb4SKQM/DroluOrZ4W1Pwczk/vkijhP3pH11ssEHtD9/v8VzXb01nvw==
   dependencies:
-    "@stitches/core" "^0.1.0-canary.20"
+    "@stitches/core" "^0.1.4"
 
 "@surma/rollup-plugin-off-main-thread@^1.1.1":
   version "1.4.2"
@@ -2569,10 +2564,10 @@ minimist@^1.2.0, minimist@^1.2.5:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
-minorui@^0.1.13:
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/minorui/-/minorui-0.1.13.tgz#347f33a91bb6e482049f526f280b6aa3cff7ac24"
-  integrity sha512-D++C8omngwbkuUAPFRRDGaF9ja79lk5kcBiq5u3tzw8om8cflYE3Ay0ZOp+5M8i504EYYgzRxvLxMisHJadiZA==
+minorui@^0.1.14:
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/minorui/-/minorui-0.1.14.tgz#9ad377142134ff990f3f536b0c3e9548e812e7da"
+  integrity sha512-4ylFc2O0wnVgHWnMc/3y86YIn9CnrvbJJN9zgwRjUaowS5mxYOh2P5TB+C55nR60SWA8kHKU5Tnd4ORYb/JCZQ==
   dependencies:
     "@radix-ui/react-accessible-icon" "^0.0.5"
     "@radix-ui/react-dialog" "^0.0.6"
@@ -2580,8 +2575,8 @@ minorui@^0.1.13:
     "@radix-ui/react-label" "^0.0.5"
     "@radix-ui/react-polymorphic" "^0.0.5"
     "@radix-ui/react-visually-hidden" "^0.0.6"
-    "@stitches/core" "0.1.0-canary.20"
-    "@stitches/react" "0.1.0-canary.20"
+    "@stitches/core" "0.1.4"
+    "@stitches/react" "0.1.4"
 
 ms@2.0.0:
   version "2.0.0"

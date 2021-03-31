@@ -70,7 +70,7 @@ export function Counter() {
           width: '$500',
         }}
       />
-      <Box css={{ margin: '$100', display: 'flex', gap: '$100' }}>
+      <Box css={{ margin: '$100', display: 'flex', fgap: '$100' }}>
         <StyledButton
           type="button"
           onClick={addLife}
