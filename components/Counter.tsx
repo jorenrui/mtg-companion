@@ -20,7 +20,8 @@ export function Counter() {
   const [error, setError] = useState<string>();
 
   const hasError = amount > STARTING_LIFE
-    || amount < 1;
+    || amount < 1
+    || isNaN(Number(amount));
 
   const handleAmountChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     setAmount(evt.target.valueAsNumber);
@@ -32,7 +33,7 @@ export function Counter() {
     if (!hasError) {
       setLife((prevLife) => prevLife + amount);
     } else {
-      setError('Invalid amount value. Considering inputting from 1-20.');
+      setError('Invalid amount value. Consider inputting from 1-20.');
     }
   };
 
@@ -42,7 +43,7 @@ export function Counter() {
     if (!hasError) {
       setLife((prevLife) => prevLife - amount);
     } else {
-      setError('Invalid amount value. Considering inputting from 1-20.');
+      setError('Invalid amount value. Consider inputting from 1-20.');
     }
   };
 
