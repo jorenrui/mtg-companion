@@ -4,7 +4,9 @@ import { useStepper } from '@/models/StepperMachine';
 import { HomeScreen } from './HomeScreen';
 import { HomePlay } from './HomePlay';
 
-const Main = styled('main', {});
+const Main = styled('main', {
+  p: '$100',
+});
 
 export function Home() {
   const [step, nextStep] = useStepper((state) => [
@@ -17,7 +19,8 @@ export function Home() {
       <Main>
         <Box
           css={{
-            height: 'calc(100vh - 100px)',
+            height: '100%',
+            minHeight: 'calc(100vh - 100px)',
             width: '100%',
             display: 'flex',
             alignItems: 'center',
