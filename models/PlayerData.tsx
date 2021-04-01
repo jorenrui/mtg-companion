@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import createStore from 'context-model';
 
 export const MIN_PLAYERS = 2;
+export const MAX_PLAYERS = 6;
 export const STARTING_LIFE = 20;
 
 export interface IPlayer {
@@ -10,11 +11,8 @@ export interface IPlayer {
   life: number;
 }
 
-interface IProps {
-  totalPlayers?: number;
-}
-
-export const PlayerData = createStore(({ totalPlayers = MIN_PLAYERS }: IProps) => {
+export const PlayerData = createStore(() => {
+  const [totalPlayers, setTotalPlayers] = useState(MIN_PLAYERS);
   const [players, setPlayers] = useState([...Array(totalPlayers)].map((_, index) => ({
     id: index + 1,
     name: `Player ${index + 1}`,
@@ -28,10 +26,20 @@ export const PlayerData = createStore(({ totalPlayers = MIN_PLAYERS }: IProps) =
     })));
   };
 
+  useEffect(() => {
+    setPlayers([...Array(totalPlayers)].map((_, index) => ({
+      id: index + 1,
+      name: `Player ${index + 1}`,
+      life: STARTING_LIFE,
+    })));
+  }, [totalPlayers]);
+
   return {
     players,
     setPlayers,
-    reset
+    totalPlayers,
+    setTotalPlayers,
+    reset,
   };
 }, {
   displayName: 'Models.PlayerData',
