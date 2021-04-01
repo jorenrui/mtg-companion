@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
-import { Box, Button, Input, styled, Text } from 'minorui';
+import { Box, Button, Input, Text } from 'minorui';
+import { IPlayer, STARTING_LIFE } from '@/models/PlayerData';
 
-const STARTING_LIFE = 20;
+interface IProps {
+  player: IPlayer;
+  setPlayers: React.Dispatch<React.SetStateAction<IPlayer[]>>
+}
 
-const StyledButton = styled(Button, {
-  color: '$primary',
-  border: '1px solid $colors$primary',
-  backgroundColor: 'white',
-
-  '&:hover, &:focus': {
-    color: 'white',
-    backgroundColor: '$primary',
-  },
-})
-
-export function Counter() {
-  const [life, setLife] = useState(STARTING_LIFE);
+export function Counter({
+  player,
+  setPlayers,
+}: IProps) {
   const [amount, setAmount] = useState(1);
   const [error, setError] = useState<string>();
 
@@ -31,7 +26,12 @@ export function Counter() {
     setError(undefined);
 
     if (!hasError) {
-      setLife((prevLife) => prevLife + amount);
+      setPlayers((prevPlayers) => prevPlayers.map((curPlayer) => ({
+        ...curPlayer,
+        life: curPlayer.id === player.id
+          ? curPlayer.life + amount
+          : curPlayer.life,
+      })));
     } else {
       setError('Invalid amount value. Consider inputting from 1-20.');
     }
@@ -41,7 +41,12 @@ export function Counter() {
     setError(undefined);
 
     if (!hasError) {
-      setLife((prevLife) => prevLife - amount);
+      setPlayers((prevPlayers) => prevPlayers.map((curPlayer) => ({
+        ...curPlayer,
+        life: curPlayer.id === player.id
+          ? curPlayer.life - amount
+          : curPlayer.life,
+      })));
     } else {
       setError('Invalid amount value. Consider inputting from 1-20.');
     }
@@ -59,7 +64,7 @@ export function Counter() {
       }
     }>
       <Text size="5xl" css={{ fontWeight: 700, marginBottom: '$200' }}>
-        {life}
+        {player.life}
       </Text>
       <Input
         type="number"
@@ -72,18 +77,20 @@ export function Counter() {
         }}
       />
       <Box css={{ margin: '$100', display: 'flex', fgap: '$100' }}>
-        <StyledButton
+        <Button
           type="button"
+          kind="secondary"
           onClick={addLife}
         >
           + Add
-        </StyledButton>
-        <StyledButton
+        </Button>
+        <Button
           type="button"
+          kind="secondary"
           onClick={subtractLife}
         >
           - Subtract
-        </StyledButton>
+        </Button>
       </Box>
       {error && (
         <Box css={{ maxWidth: '$1500' }}>

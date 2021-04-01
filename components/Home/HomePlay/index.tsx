@@ -1,36 +1,41 @@
 import React from 'react';
-import { Box, Heading, styled } from 'minorui';
+import { Box, Heading } from 'minorui';
+import { usePlayerData } from '@/models/PlayerData';
 import { Counter } from '@/components/Counter';
 
-const TOTAL_PLAYERS = 2;
-
-const Main = styled('main', {});
-
 export function HomePlay() {
+  const [players, setPlayers] = usePlayerData((state) => [
+    state.players,
+    state.setPlayers,
+  ]);
+
   return (
     <Box
       css={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
         m: '$100',
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: '$100',
 
         '@downSm': {
-          flexDirection: 'column',
+          gridTemplateColumns: '1fr',
         },
       }}
     >
-      {[...Array(TOTAL_PLAYERS)].map((_, index) => (
+      {players.map((player) => (
         <Box
-          key={index}
+          key={player.id}
           css={{
             textAlign: 'center',
           }}
         >
           <Heading as="h2" size="2xl">
-            Player {index + 1}
+            {player.name}
           </Heading>
-          <Counter />
+          <Counter
+            player={player}
+            setPlayers={setPlayers}
+          />
         </Box>
       ))}
     </Box>
