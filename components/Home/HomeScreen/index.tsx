@@ -60,7 +60,11 @@ export function HomeScreen() {
           Roll the dice to see who goes first (higher or lower):
         </Text>
         <Dice />
-        <Label htmlFor="totalPlayers" css={{ mt: '$100' }}>
+        <Label
+          id="label-totalPlayers"
+          htmlFor="totalPlayers"
+          css={{ mt: '$100' }}
+        >
           No. of Players:
         </Label>
         <Input

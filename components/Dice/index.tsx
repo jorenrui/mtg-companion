@@ -13,7 +13,7 @@ const MAX_DICE_VALUE = 6;
 const getRandomValue = () => Math.floor(Math.random() * MAX_DICE_VALUE) + START_RANGE;
 
 export function Dice() {
-  const [value, setValue] = useState(getRandomValue());
+  const [value, setValue] = useState(1);
   const [loading, setLoading] = useState(false);
 
   const rollDice = () => {
